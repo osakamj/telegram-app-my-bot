@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق المهام والأرباح</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #0f172a; /* لون خلفية كحلي داكن */
+            color: #f8fafc; 
+            margin: 0; 
+            padding: 0; 
+            padding-bottom: 80px; /* مساحة للشريط السفلي */
+        }
+        .header { 
+            text-align: center; 
+            padding: 30px 20px; 
+            background-color: #1e293b; 
+            border-bottom: 2px solid #334155; 
+            border-radius: 0 0 20px 20px;
+        }
+        .balance-title { font-size: 16px; color: #94a3b8; }
+        .balance { font-size: 36px; font-weight: bold; color: #3b82f6; margin-top: 5px; }
+        .card { 
+            background-color: #1e293b; 
+            margin: 20px; 
+            padding: 20px; 
+            border-radius: 16px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            border: 1px solid #334155;
+        }
+        .btn-action { 
+            background: linear-gradient(to right, #3b82f6, #2563eb); 
+            color: white; 
+            border: none; 
+            padding: 15px 20px; 
+            border-radius: 12px; 
+            width: 100%; 
+            font-size: 16px; 
+            font-weight: bold;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        .bottom-nav { 
+            position: fixed; 
+            bottom: 0; 
+            width: 100%; 
+            background-color: #1e293b; 
+            display: flex; 
+            justify-content: space-around; 
+            padding: 12px 0; 
+            border-top: 1px solid #334155; 
+            border-radius: 20px 20px 0 0;
+        }
+        .nav-item { 
+            text-align: center; 
+            color: #64748b; 
+            font-size: 12px; 
+            font-weight: bold;
+        }
+        .nav-item.active { color: #3b82f6; }
+        .nav-icon { font-size: 24px; margin-bottom: 4px; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="balance-title">إجمالي الأرباح</div>
+        <div class="balance">0.000 🪙</div>
+    </div>
+    
+    <div class="card">
+        <h3>مرحباً بك في الواجهة الجديدة 🚀</h3>
+        <p style="color: #94a3b8; font-size: 14px;">تم حذف المنجم، وهذه المساحة ستكون لعرض المهام السريعة ومعلومات حسابك.</p>
+        
+        <!-- زر إضافة المهمة الذي يفتح المحادثة -->
+        <button class="btn-action" onclick="openSupport()">إضافة مهمة ➕</button>
+    </div>
+
+    <!-- الشريط السفلي (بدون المنجم) -->
+    <div class="bottom-nav">
+        <div class="nav-item active">
+            <div class="nav-icon">🏠</div>
+            الرئيسية
+        </div>
+        <div class="nav-item">
+            <div class="nav-icon">📋</div>
+            المهام
+        </div>
+        <div class="nav-item">
+            <div class="nav-icon">👥</div>
+            الأصدقاء
+        </div>
+        <div class="nav-item">
+            <div class="nav-icon">👤</div>
+            الملف الشخصي
+        </div>
+    </div>
+
+    <script>
+        window.Telegram.WebApp.ready();
+        window.Telegram.WebApp.expand();
+
+        function openSupport() {
+            // كود مبدئي يفتح رابط التليجرام الخاص بك عند الضغط
+            window.Telegram.WebApp.openTelegramLink("https://t.me/B0t4t_VIP");
+        }
+    </script>
+</body>
+</html>
