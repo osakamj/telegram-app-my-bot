@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Dragon App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 80px;
+        }
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #1e293b;
+            border-bottom: 2px solid #334155;
+            border-radius: 0 0 20px 20px;
+        }
+        .balance-title { font-size: 16px; color: #94a3b8; }
+        .balance { font-size: 32px; font-weight: bold; color: #38bdf8; margin-top: 5px; }
+        .card {
+            background-color: #1e293b;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            border: 1px solid #334155;
+            text-align: center;
+        }
+        .btn-action {
+            background: linear-gradient(to right, #38bdf8, #2563eb);
+            color: white;
+            border: none;
+            padding: 15px 24px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 12px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        .better-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #1e293b;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            border-top: 1px solid #334155;
+            border-radius: 20px 20px 0 0;
+        }
+        .nav-item {
+            text-align: center;
+            color: #64748b;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .nav-item.active { color: #38bdf8; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="balance-title">إجمالي الأرباح</div>
+        <div class="balance">🪙 0.00</div>
+    </div>
+
+    <div class="card">
+        <h2>مرحباً بك في التطبيق 🚀</h2>
+        <p style="color: #94a3b8; font-size: 14px;">اضغط على الزر بالأسفل لفتح قناة التحديثات أو التفاعل.</p>
+        <button class="btn-action" onclick="openChannel()">📢 قناة التحديثات</button>
+    </div>
+
+    <div class="better-nav">
+        <div class="nav-item active">🏠 رئيسية</div>
+        <div class="nav-item">📋 مهام</div>
+        <div class="nav-item">👥 الأصدقاء</div>
+        <div class="nav-item">💼 البنك الشخصي</div>
+    </div>
+
+    <script>
+        window.Telegram.WebApp.Ready();
+        window.Telegram.WebApp.Expand();
+
+        function openChannel() {
+            // ضع رابط قناتك أو بوتك هنا بين العلامتين
+            window.Telegram.WebApp.openTelegramLink("https://t.me/YOUR_CHANNEL");
+        }
+    </script>
+</body>
+</html>
